@@ -3,15 +3,8 @@ import axios from 'axios';
 import { Hearder} from '../utils/Url';
 import { Link } from 'react-router-dom';
 
-const ListMedia = () => {
-    const [media, setMedia] = useState([]);
-
-    useEffect(()=>{
-        axios.post("/medias/posters", 1, Hearder).then(response=>{
-            console.log("res", response.data)
-            setMedia(response.data)
-        })
-    }, [])
+const ListMedia = ({media}) => {
+    
     return (
         <div>
             {
